@@ -1,0 +1,44 @@
+#thumbnails {
+    overflow: auto;
+
+    width: 100%;
+    height: 100%;
+}
+
+#thumbnails h1 {
+    font-size: 46px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-animation: fadeIn .3s .8s forwards;
+    animation: fadeIn .3s .8s forwards;
+    text-align: center;
+    text-transform: uppercase;
+
+    opacity: 0;
+    color: #d1d1d1;
+    text-shadow: 0 1px 0 #fff;
+}
+
+#thumbnails img {
+    display: block;
+    float: left;
+
+    width: 150px;
+    height: 150px;
+    margin: 6px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+#thumbnails .loaded {
+    -webkit-animation: zoomIn .3s forwards;
+    animation: zoomIn .3s forwards;
+}

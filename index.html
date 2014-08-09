@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<title>Simple Image Uploader</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="author" content="Krzysztof Duralek <kduralek@gmail.com>">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- web app in fullscreen mode on iPad -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/animation.css" rel="stylesheet" type="text/css">
+	<link href="css/common.css" rel="stylesheet" type="text/css">
+	<link href="css/header.css" rel="stylesheet" type="text/css">
+	<link href="css/droppable.css" rel="stylesheet" type="text/css">
+	<link href="css/thumbnails.css" rel="stylesheet" type="text/css">
+    <link href="css/lightbox.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+	<main>
+		
+		<header>
+			<h1>Simple Image Uploader</h1>
+			<div class="button">
+				<p>Click to upload</p>
+				<input type="file" id="file-input" multiple />
+			</div>
+		</header>
+
+		<section id="droppable">
+
+			<div id="thumbnails">
+				<h1>Drop files here</h1>
+			</div>	
+
+			<div class="drop-area">
+				<p>Drop files here to upload</p>
+			</div>
+
+		</section>
+
+		<div id="lightbox"></div>
+
+	</main>	
+	<script src="app/directives/droppable.js"></script>
+	<script src="app/directives/file-input.js"></script>
+    <script src="app/controllers/lightbox-controller.js"></script>
+    <script src="app/controllers/files-controller.js"></script>
+	<script src="app/app.js"></script>
+	<script>
+		app.run();
+	</script>
+</body>
+</html>
