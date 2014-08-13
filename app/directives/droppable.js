@@ -61,7 +61,7 @@ var droppable = (function(){
 	var destroy = function () {
 		this.removeEventListener('dragover', onDragOver, false);
 		this.removeEventListener('dragenter', onDragEnter, false);
-		this.removeEventListener('dragover', onDragLeave, false);
+		this.removeEventListener('dragleave', onDragLeave, false);
 		this.removeEventListener('drop', onDrop, false);
 	};
 
