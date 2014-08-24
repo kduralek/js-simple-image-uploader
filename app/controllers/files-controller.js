@@ -2,30 +2,19 @@
 /**
  *	Handles uploaded images by creating thumbnails and appending them to the DOM
  */
-var filesController = (function (FileReader, lightboxController) {
+var filesController = (function (FileReader, imageController, lightboxController) {
 	var ctl = {},
 		acceptedMimeTypes = ['image/png', 'image/jpeg'],
-        thumbWidth = 150,
-        thumbHeight = 150,
 		thumbsHolder;
 
     var createThumbnail = function (type, img) {
-        var canvas,
-            ctx,
-            thumb;
 
-        // create canvas to resize original image for thumbnail purpose
-        // it doesn't keep a proper aspect ratio
-        // since it is not a case for this task
-        canvas = document.createElement('canvas');
-        ctx = canvas.getContext('2d');
-        ctx.canvas.width = thumbWidth;
-        ctx.canvas.height = thumbHeight;
-        ctx.drawImage(img, 0, 0, thumbWidth, thumbHeight);
+        // resize with crop to square image
+        var resizedImageSrc = imageController.resizeToFill(img, type, 150);
 
-        thumb = new Image();
+        var thumb = new Image();
         thumb.className = 'loaded';
-        thumb.src = canvas.toDataURL(type);
+        thumb.src = resizedImageSrc;
 
         // attach click listener for a lightbox
         thumb.addEventListener('click', function () {
@@ -77,4 +66,4 @@ var filesController = (function (FileReader, lightboxController) {
 	};
 	
 	return ctl;
-})(FileReader, lightboxController);
+})(FileReader, imageController, lightboxController);

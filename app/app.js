@@ -1,8 +1,8 @@
 'use strict';
 /**
- *	Bootstrap module responsible for application setup 
+ *	Bootstrap module responsible for application setup
  */
-var app = (function (document) {
+var app = (function (document, filesController, fileInput, droppable) {
 	return {
 		run: function () {
 			// prepare DOM elements

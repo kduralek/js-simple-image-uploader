@@ -1,8 +1,8 @@
 'use strict';
 /**
- *
+ * Displays original (non-resized) image on a layer
  */
-var lightboxController = (function (FileReader) {
+var lightboxController = (function () {
     var lightboxEl,
         ctl = {};
 
